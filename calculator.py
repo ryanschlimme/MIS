@@ -27,6 +27,14 @@ str = sys.argv[1]
 equation = split(delimeters, str)
 equation1 = list(filter(None, equation))
 
+if not ("+" in str or "-" in str or "*" in str):
+    print("NA")
+    exit()
+
+if not (len(equation1) == 2):
+    print("NA")
+    exit()
+
 if not (isnumber(equation1[0]) and isnumber(equation1[1])):
     print("NA")
     exit()
@@ -50,7 +58,4 @@ elif "*" in str:
     print(Num1 * Num2)
 elif "-" in str:
     print(Num1 - Num2)
-    exit()
-else:
-    print("NA")
     exit()
