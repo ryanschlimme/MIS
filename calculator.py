@@ -5,7 +5,6 @@
 # either addition, subtraction, or multiplication, and computes the answer, given there are no spaces in the string.
 # If an unexpected input is entered, it returns value "NA".
 
-import string
 import re
 import sys
 
@@ -42,11 +41,19 @@ if not (isnumber(equation1[0]) and isnumber(equation1[1])):
 if equation[0] == '':
     Num0 = int(equation[1])
     Num1 = (-1) * Num0
-    Num2 = int(equation[2])
+    if equation[2] == '':
+        Num3 = int(equation[3])
+        Num2 = (-1) * Num3
+    else:
+        Num2 = int(equation[2])
 elif equation[1] == '':
-    Num1 = int(equation[0])
     Num0 = int(equation[2])
     Num2 = (-1) * Num0
+    if equation[0] == '':
+        Num3 = int(equation[1])
+        Num1 = (-1) * Num3
+    else:
+        Num1 = int(equation[0])
 else:
     Num1 = int(equation[0])
     Num2 = int(equation[1])
